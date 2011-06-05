@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D6C4FC1-4EC2-4108-BD7C-51F5466C0C04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsingSpecflowForUnitTests</RootNamespace>
+    <AssemblyName>UsingSpecflowForUnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.9.10348, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\lib\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillingInstallmentDates\BillingInstallmentDateService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingInstallmentDateService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BillingInstallmentDates\Domain\BillingInstallmentDate.cs" />
+    <Compile Include="BillingInstallmentDates\Domain\BillingInstallmentDateService.cs" />
+    <Compile Include="BillingInstallmentDates\Domain\IBillingInstallmentDateRepository.cs" />
+    <Compile Include="BillingInstallmentDates\Domain\IBillingInstallmentDateService.cs" />
+    <Compile Include="BillingInstallmentDates\Domain\InstallmentDateType.cs" />
+    <Compile Include="BillingInstallmentDates\Domain\ITimeService.cs" />
+    <Compile Include="BillingInstallmentDates\StepDefinitions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecureNavigation\Domain\ETicket.cs" />
+    <Compile Include="SecureNavigation\Domain\HyperlinkData.cs" />
+    <Compile Include="SecureNavigation\Domain\HyperlinkGroup.cs" />
+    <Compile Include="SecureNavigation\Domain\IAuthorizationService.cs" />
+    <Compile Include="SecureNavigation\Domain\IETicketRepository.cs" />
+    <Compile Include="SecureNavigation\Domain\INavigationService.cs" />
+    <Compile Include="SecureNavigation\Domain\IFeatureRepository.cs" />
+    <Compile Include="SecureNavigation\Domain\NavigationHyperlinks.cs" />
+    <Compile Include="SecureNavigation\Domain\NavigationSection.cs" />
+    <Compile Include="SecureNavigation\Domain\NavigationService.cs" />
+    <Compile Include="SecureNavigation\Domain\Permission.cs" />
+    <Compile Include="SecureNavigation\Domain\StringExtension.cs" />
+    <Compile Include="SecureNavigation\Domain\Feature.cs" />
+    <Compile Include="SecureNavigation\Domain\ApplicationModule.cs" />
+    <Compile Include="SecureNavigation\Secure Navigation Rendering1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Secure Navigation Rendering.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SecureNavigation\StepDefinitions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="BillingInstallmentDates\BillingInstallmentDateService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BillingInstallmentDateService.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SecureNavigation\Secure Navigation Rendering.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Secure Navigation Rendering1.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
